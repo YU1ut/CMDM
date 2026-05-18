@@ -1,0 +1,20 @@
+name: Causal_DiT
+ae_name: MAE_VAE
+output_dim: 64
+dataset_name: t2m
+dataset_dir: ./datasets
+max_motion_length: 192
+unit_length: 4
+
+seed: 3467
+num_workers: 4
+checkpoints_dir: ./checkpoints
+cfg: 3.0
+cal_mm: false
+feature_dim: 67
+gpu: "0"
+
+hydra:
+  run:
+    dir: .
+  output_subdir: null

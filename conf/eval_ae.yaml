@@ -1,0 +1,14 @@
+name: MAC_VAE
+dataset_dir: ./datasets
+dataset_name: t2m
+output_dim: 64
+
+seed: 3467
+num_workers: 4
+checkpoints_dir: ./checkpoints
+gpu: "0"
+
+hydra:
+  run:
+    dir: .
+  output_subdir: null

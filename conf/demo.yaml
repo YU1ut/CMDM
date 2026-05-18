@@ -1,0 +1,26 @@
+exp: sample_1
+name: pretrained_dit
+ae_name: pretrained_vae
+output_dim: 64
+dataset_name: t2m
+dataset_dir: ./datasets
+
+seed: 3407
+num_workers: 4
+checkpoints_dir: ./checkpoints
+cfg: 3.0
+chunk_size: 49
+n_tokens: 49
+num_past_latents: 1
+
+length: 120
+input_text: the person walked forward and is picking up his toolbox.
+num_samples: 5
+prompt_csv: sample/sample_prompt.csv
+autoregressive: false
+out_dir_root: generations
+
+hydra:
+  run:
+    dir: .
+  output_subdir: null

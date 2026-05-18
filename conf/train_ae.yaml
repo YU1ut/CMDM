@@ -1,0 +1,37 @@
+name: MAC_VAE
+dataset_dir: ./datasets
+dataset_name: t2m
+batch_size: 256
+window_size: 64
+output_dim: 64
+vf_weight: 0.1
+use_adaptive_vf: true
+reverse_proj: true
+aux_model_path: ./Part_TMR/checkpoints/exp1/HumanML3D/best_model.pt
+
+epoch: 50
+warm_up_iter: 2000
+accum: 2
+kl_weight: 0.01
+kl_warmup_iter: 2000
+root_loss_weight: 0.05
+lr: 0.0002
+milestones: [150000, 250000]
+lr_decay: 0.1
+weight_decay: 0.0
+recons_loss: l1_smooth
+
+seed: 5427
+num_workers: 4
+is_continue: false
+checkpoints_dir: ./checkpoints
+
+log_every: 1000
+project_name: your_wandb_project
+entity: your_wandb_entity
+gpu: "0"
+
+hydra:
+  run:
+    dir: .
+  output_subdir: null
