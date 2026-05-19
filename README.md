@@ -18,7 +18,7 @@ Code of the paper "Causal Motion Diffusion Models for Autoregressive Motion Gene
 
 ##  ⚙️ Getting Started
 <details>
-<summary><b>Installation, checkpoints, and data</b></summary>
+<summary><b>Installation, pre-trained models, and data</b></summary>
 
 ### 1. Python Environment using uv
 ```bash
@@ -40,7 +40,7 @@ Download **HumanML3D** Dataset from the repository of [HumanML3D](https://github
 
 The whole directory should be look like this:
 ```
-MotionPatches
+CMDM
 │   README.md
 │   pyproject.toml
 |   ...
