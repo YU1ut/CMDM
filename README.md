@@ -105,10 +105,10 @@ Outputs are saved in `generations/<exp>/` as:
 
 </details>
 
-## 📊 Evaluate Pretrained CMDM models
+## 📊 Evaluate Pre-trained CMDM models
 
 <details>
-<summary><b>Evaluate pretrained models</b></summary>
+<summary><b>Evaluate pre-trained models</b></summary>
 
 ### Evaluate MAC-VAE
 ```bash
