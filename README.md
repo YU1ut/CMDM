@@ -1,6 +1,6 @@
 # Causal Motion Diffusion Models (CMDM)
 
-This repository contains materials developed by LY Corporation and is temporarily open-sourced for the purpose of [our reseach project](https://arxiv.org/abs/2602.22594).
+This repository contains materials developed by LY Corporation and is temporarily open-sourced for the purpose of [our research project](https://arxiv.org/abs/2602.22594).
  
 - **Temporary Release**: This repository is temporarily available as open-source. Therefore this repository may be turn into read-only or private anytime.
 - **Attribution**: All code and materials in this repository are owned by LY Corporation.
