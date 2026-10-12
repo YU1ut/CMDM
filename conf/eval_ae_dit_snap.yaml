@@ -1,0 +1,43 @@
+name: Causal_DiT_bm_aba_full_window_rp
+ae_name: MAC_VAE_bm_window_rp
+output_dim: 32
+dit_arch: dit_mlarge
+dataset_name: snap
+dataset_dir: ./datasets
+max_motion_length: 192
+unit_length: 4
+num_frame_per_block: 20
+
+text_encoder_type: distilbert
+text_max_length: None
+
+snap_max_motion_length: 320
+snap_unit_length: 4
+snap_eval_batch_size: 100
+snap_min_motion_length: 128
+snap_text_encoder_type: distilbert
+snap_text_max_length: 120
+snap_text_encoder_local_files_only: false
+snap_feature_dim: 148
+snap_use_feature_dim: false
+
+uncertainty_scale: 1
+sampling_timesteps: 50
+dit_ckpt_name: net_best_fid.tar
+ae_ckpt_name: net_best_mpjpe.tar
+use_m_length: false
+
+seed: 3467
+num_workers: 4
+checkpoints_dir: ./checkpoints
+eval_output_dir: null
+cfg: 4.0
+sampler: myheun2
+cal_mm: false
+feature_dim: 259
+gpu: "0"
+
+hydra:
+  run:
+    dir: .
+  output_subdir: null

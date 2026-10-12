@@ -1,0 +1,24 @@
+name: MAC_VAE_bm_window_rp
+dataset_name: snap
+dataset_dir: ./datasets
+output_dim: 32
+snap_max_motion_length: 320
+snap_unit_length: 4
+snap_eval_batch_size: 100
+snap_text_max_length: 120
+snap_min_motion_length: 128
+snap_feature_dim: 148
+snap_use_feature_dim: false
+ae_ckpt_name: net_best_mpjpe.tar
+
+seed: 3467
+num_workers: 4
+checkpoints_dir: ./checkpoints
+eval_output_dir: null
+repeat_time: 10
+gpu: "0"
+
+hydra:
+  run:
+    dir: .
+  output_subdir: null

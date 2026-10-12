@@ -1,0 +1,50 @@
+name: MAC_VAE
+dataset_name: snap
+dataset_dir: ./datasets
+batch_size: 256
+window_size: 64
+output_dim: 32
+vf_weight: 0.001
+use_adaptive_vf: false
+use_aux_model: true
+reverse_proj: true
+snap_train_split: train_ids.txt
+snap_val_split: val_ids.txt
+eval_seed: 12345
+snap_aux_model_path: ./Part_TMR/checkpoints/exp_snapmogen/SnapMoGen/best_model.pt
+
+snap_max_motion_length: 320
+snap_unit_length: 4
+snap_eval_batch_size: 100
+snap_text_max_length: 120
+snap_min_motion_length: 128
+snap_feature_dim: 148
+snap_use_feature_dim: false
+
+epoch: 50
+warm_up_iter: 2000
+accum: 2
+kl_weight: 0.01
+kl_warmup_iter: 2000
+root_loss_weight: 1.5
+vel_loss_weight: 2.0
+nll_reduction: batch_mean
+vel_loss_mode: feature_prefix
+lr: 0.0002
+milestones: [50000, 100000]
+lr_decay: 0.1
+weight_decay: 0.0
+
+seed: 3467
+num_workers: 4
+is_continue: false
+checkpoints_dir: ./checkpoints
+log_every: 1000
+project_name: your_wandb_project
+entity: your_wandb_entity
+gpu: "0"
+
+hydra:
+  run:
+    dir: .
+  output_subdir: null

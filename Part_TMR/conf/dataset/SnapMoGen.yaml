@@ -1,0 +1,17 @@
+dataset_name: SnapMoGen
+data_root: ./datasets/SnapMoGen
+motion_dir: ${dataset.data_root}/renamed_feats
+text_path: ${dataset.data_root}/all_caption_clean.json
+mean_path: ${dataset.data_root}/meta_data/mean.npy
+std_path: ${dataset.data_root}/meta_data/std.npy
+train_split: ${dataset.data_root}/data_split_info/train_ids.txt
+val_split: ${dataset.data_root}/data_split_info/val_ids.txt
+test_split: ${dataset.data_root}/data_split_info/test_ids.txt
+joints_num: 24
+max_motion_length: 320
+window_size: 64
+times: 1
+fps: 30
+motion_lr_factor: 10.0
+text_lr_factor: 1.0
+head_lr_factor: 10.0

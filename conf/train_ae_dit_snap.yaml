@@ -1,0 +1,66 @@
+name: Causal_DiT
+dataset_name: snap
+dataset_dir: ./datasets
+max_motion_length: 192
+unit_length: 4
+num_frame_per_block: 20
+
+text_encoder_type: distilbert
+text_max_length: None
+
+snap_max_motion_length: 320
+snap_unit_length: 4
+snap_eval_batch_size: 100
+snap_min_motion_length: 128
+snap_text_encoder_type: distilbert
+snap_text_max_length: 120
+snap_text_encoder_local_files_only: false
+snap_feature_dim: 148
+snap_use_feature_dim: false
+snap_train_split: train_ids.txt
+snap_val_split: val_ids.txt
+
+batch_size: 64
+output_dim: 32
+dit_arch: dit_mlarge
+ae_name: MAC_VAE
+ae_ckpt_name: net_best_mpjpe.tar
+require_aux_vae: false
+use_m_length: false
+
+epoch: 500
+warm_up_iter: 2000
+accum: 1
+lr: 0.0002
+milestones: [100000, 200000]
+lr_decay: 0.3
+cosine_min_lr: 2e-5
+max_grad_norm: 1.0
+loss_skip_threshold: 100.0
+latent_abs_max_threshold: 1000.0
+fid_eval_every: 50
+fid_eval_window_start: 200
+fid_eval_window_end: 350
+fid_eval_window_every: 25
+fid_eval_passes: 1
+eval_seed: 12345
+fid_cond_scale: 3.0
+clip_grad_norm: false
+early_stop_start_epoch: 350
+early_stop_patience_evals: 0
+resume_best_fid: null
+
+seed: 3467
+num_workers: 8
+is_continue: false
+checkpoints_dir: ./checkpoints
+
+log_every: 50
+project_name: your_wandb_project
+entity: your_wandb_entity
+gpu: "0"
+
+hydra:
+  run:
+    dir: .
+  output_subdir: null

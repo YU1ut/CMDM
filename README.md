@@ -163,6 +163,33 @@ uv run python -m eval.eval_ae_dit name=Causal_DiT
 
 </details>
 
+## SnapMoGen models
+
+<details>
+<summary><b>SnapMoGen models</b></summary>
+
+### Data and evaluation models
+
+Run `uv sync`, then place the [SnapMoGen dataset](https://huggingface.co/datasets/Ericguo5513/SnapMoGen) under `datasets/SnapMoGen/`. It needs `meta_data/`, `data_split_info/`, `renamed_feats/`, and `all_caption_clean.json`. Place the [SnapMoGen repository](https://github.com/snap-research/SnapMoGen) at `datasets/SnapMoGen/SnapMoGen/`, including its evaluator files under `checkpoint_dir/snapmogen/evaluator/`.
+
+### Part-TMR and MAC-VAE
+```bash
+uv run python -m Part_TMR.scripts.train_snap
+uv run python -m train.train_ae_snap
+```
+
+### Train CMDM
+```bash
+uv run python -m train.train_ae_dit_snap
+```
+
+### Evaluate CMDM
+```bash
+uv run python -m eval.eval_ae_dit_snap
+```
+
+</details>
+
 ## Acknowledgement
 
 Some parts of our code are based on [ACMDM](https://github.com/neu-vi/ACMDM) and other third-party software listed in [NOTICE.txt](NOTICE.txt).

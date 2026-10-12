@@ -79,7 +79,7 @@ def update_lr_warm_up(nb_iter, warm_up_iter, optimizer, lr):
     return current_lr
 
 
-def save(file_name, ep, model, optimizer, scheduler, total_it, name, ema=None):
+def save(file_name, ep, model, optimizer, scheduler, total_it, name, ema=None, extra_state=None):
     state = {
         name: model.state_dict(),
         f"opt_{name}": optimizer.state_dict(),
@@ -98,6 +98,8 @@ def save(file_name, ep, model, optimizer, scheduler, total_it, name, ema=None):
             del ema_mardm_state_dict[e]
         state[name] = mardm_state_dict
         state[f"ema_{name}"] = ema_mardm_state_dict
+    if extra_state is not None:
+        state.update(extra_state)
     torch.save(state, file_name)
 
 
